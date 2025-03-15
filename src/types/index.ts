@@ -30,6 +30,20 @@ export interface Tweet {
   url: string;
 }
 
+// ArXiv Paper Types
+export interface Paper {
+  id: string;
+  title: string;
+  authors: string[];
+  summary: string;
+  publishedDate: string;
+  updatedDate: string;
+  categories: string[];
+  pdfUrl: string;
+  arxivUrl: string;
+  doi?: string;
+}
+
 // Category Types
 export type Category = 
   | 'All'

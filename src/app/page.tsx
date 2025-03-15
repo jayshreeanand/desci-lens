@@ -12,6 +12,16 @@ const LimitedTwitterFeed = dynamic(() => import('@/components/LimitedTwitterFeed
   ),
 });
 
+// Dynamically import the LimitedArxivPapers component with client-side rendering
+const LimitedArxivPapers = dynamic(() => import('@/components/LimitedArxivPapers'), {
+  ssr: false,
+  loading: () => (
+    <div className="bg-white shadow-md rounded-lg p-6 h-96 flex items-center justify-center">
+      <div className="animate-pulse text-gray-400">Loading arXiv papers...</div>
+    </div>
+  ),
+});
+
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
@@ -31,6 +41,9 @@ export default function Home() {
               </Link>
               <Link href="/twitter" className="px-3 py-2 rounded-md text-sm font-medium text-gray-900 hover:bg-gray-100">
                 Twitter Feed
+              </Link>
+              <Link href="/arxiv" className="px-3 py-2 rounded-md text-sm font-medium text-gray-900 hover:bg-gray-100">
+                Research Papers
               </Link>
               <Link href="/ai-features" className="px-3 py-2 rounded-md text-sm font-medium text-gray-900 hover:bg-gray-100">
                 AI Features
@@ -172,6 +185,34 @@ export default function Home() {
           <div className="mt-8 text-center">
             <Link href="/twitter" className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-primary-600 hover:bg-primary-700">
               View Full Twitter Feed
+              <svg xmlns="http://www.w3.org/2000/svg" className="ml-2 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+              </svg>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ArXiv Papers Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="lg:text-center mb-8">
+            <h2 className="text-base text-primary-600 font-semibold tracking-wide uppercase">Research</h2>
+            <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+              DeSci Research Papers
+            </p>
+            <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+              Discover the latest scientific papers on decentralized science, blockchain in research, and open science.
+            </p>
+          </div>
+          
+          <Suspense fallback={<div className="h-96 flex items-center justify-center">Loading...</div>}>
+            <LimitedArxivPapers />
+          </Suspense>
+          
+          <div className="mt-8 text-center">
+            <Link href="/arxiv" className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-primary-600 hover:bg-primary-700">
+              Browse All Research Papers
               <svg xmlns="http://www.w3.org/2000/svg" className="ml-2 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                 <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
               </svg>
