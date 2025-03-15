@@ -16,6 +16,20 @@ export interface Project {
   lastUpdated: string;
 }
 
+// Tweet Types
+export interface Tweet {
+  id: string;
+  text: string;
+  createdAt: string;
+  username: string;
+  displayName: string;
+  profileImageUrl: string;
+  likes: number;
+  retweets: number;
+  hashtags: string[];
+  url: string;
+}
+
 // Category Types
 export type Category = 
   | 'All'
@@ -49,4 +63,6 @@ export interface HetuMetadata {
   scores: ProjectScores;
   timestamp: string;
   verificationHash: string;
-} 
+}
+
+// Add other types as needed 

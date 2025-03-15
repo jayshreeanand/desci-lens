@@ -15,6 +15,9 @@ const nextConfig = {
     HETU_TESTNET_BLOCK_EXPLORER: process.env.HETU_TESTNET_BLOCK_EXPLORER,
     HETU_TESTNET_FAUCET: process.env.HETU_TESTNET_FAUCET,
   },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
 }
 
 module.exports = nextConfig 

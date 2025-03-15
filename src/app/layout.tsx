@@ -5,8 +5,8 @@ import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'DeSciLens - Discover and Analyze Decentralized Science Projects',
-  description: 'AI-powered tool that automatically discovers, analyzes, and ranks DeSci (Decentralized Science) projects.',
+  title: 'DeSciLens - Discover & Analyze Decentralized Science Projects',
+  description: 'DeSciLens is an autonomous AI agent that discovers, analyzes, and ranks DeSci projects, leveraging Hetu Protocol for decentralized data management.',
 }
 
 export default function RootLayout({

@@ -1,4 +1,16 @@
 import Link from 'next/link'
+import dynamic from 'next/dynamic'
+import { Suspense } from 'react'
+
+// Dynamically import the TwitterFeed component with client-side rendering
+const TwitterFeed = dynamic(() => import('@/components/TwitterFeed'), {
+  ssr: false,
+  loading: () => (
+    <div className="bg-white shadow-md rounded-lg p-6 h-96 flex items-center justify-center">
+      <div className="animate-pulse text-gray-400">Loading Twitter feed...</div>
+    </div>
+  ),
+});
 
 export default function Home() {
   return (
@@ -16,6 +28,9 @@ export default function Home() {
               </Link>
               <Link href="/projects" className="px-3 py-2 rounded-md text-sm font-medium text-gray-900 hover:bg-gray-100">
                 Projects
+              </Link>
+              <Link href="/twitter" className="px-3 py-2 rounded-md text-sm font-medium text-gray-900 hover:bg-gray-100">
+                Twitter Feed
               </Link>
               <Link href="/ai-features" className="px-3 py-2 rounded-md text-sm font-medium text-gray-900 hover:bg-gray-100">
                 AI Features
@@ -134,6 +149,25 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Twitter Feed Section */}
+      <section className="py-16 bg-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="lg:text-center mb-8">
+            <h2 className="text-base text-primary-600 font-semibold tracking-wide uppercase">Community</h2>
+            <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+              DeSci Twitter Feed
+            </p>
+            <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+              Stay updated with the latest discussions and announcements in the decentralized science community.
+            </p>
+          </div>
+          
+          <Suspense fallback={<div className="h-96 flex items-center justify-center">Loading...</div>}>
+            <TwitterFeed />
+          </Suspense>
         </div>
       </section>
 
