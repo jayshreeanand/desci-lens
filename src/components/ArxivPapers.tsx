@@ -58,12 +58,22 @@ export default function ArxivPapers({ limit, showSearch = true }: ArxivPapersPro
 
   // Format date for display
   const formatDate = (dateString: string) => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'short',
-      day: 'numeric'
-    });
+    try {
+      const date = new Date(dateString);
+      return date.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric'
+      });
+    } catch (error) {
+      return dateString;
+    }
+  };
+
+  // Extract arXiv ID from URL
+  const extractArxivId = (url: string): string => {
+    const match = url.match(/abs\/([^\/]+)$/);
+    return match ? match[1] : url;
   };
 
   // Limit the number of papers if specified
@@ -168,7 +178,7 @@ export default function ArxivPapers({ limit, showSearch = true }: ArxivPapersPro
                 rel="noopener noreferrer"
                 className="text-sm text-blue-600 hover:text-blue-800 flex items-center"
               >
-                View on arXiv
+                View on arXiv ({extractArxivId(paper.arxivUrl)})
               </Link>
             </div>
           </div>

@@ -38,12 +38,22 @@ export default function LimitedArxivPapers() {
 
   // Format date for display
   const formatDate = (dateString: string) => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'short',
-      day: 'numeric'
-    });
+    try {
+      const date = new Date(dateString);
+      return date.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric'
+      });
+    } catch (error) {
+      return dateString;
+    }
+  };
+
+  // Extract arXiv ID from URL
+  const extractArxivId = (url: string): string => {
+    const match = url.match(/abs\/([^\/]+)$/);
+    return match ? match[1] : '';
   };
 
   return (
@@ -106,6 +116,9 @@ export default function LimitedArxivPapers() {
                     {category}
                   </span>
                 ))}
+                <span className="text-blue-600">
+                  {extractArxivId(paper.arxivUrl)}
+                </span>
               </div>
             </div>
           </Link>
