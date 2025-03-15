@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import HetuInfo from '@/components/HetuInfo'
+import HetuConnect from '@/components/HetuConnect'
 
 export default function About() {
   return (
@@ -71,6 +73,14 @@ export default function About() {
                   By removing traditional gatekeepers and intermediaries, DeSci aims to accelerate scientific progress and make it more equitable and accessible to researchers and the public worldwide.
                 </p>
               </div>
+            </div>
+
+            {/* Hetu Protocol Information */}
+            <HetuInfo />
+            
+            {/* Hetu Connect Component */}
+            <div className="mb-8">
+              <HetuConnect />
             </div>
 
             <div className="bg-white shadow overflow-hidden sm:rounded-lg mb-8">

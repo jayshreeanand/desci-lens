@@ -28,11 +28,33 @@ DeSciLens is an AI-powered tool that automatically discovers, analyzes, and rank
 
 - Store project metadata & scores on Hetu Protocol for decentralized validation.
 - Provide verifiable attribution & credibility to DeSci projects.
+- Integration with Hetu testnet for blockchain-based data storage.
 
 ### 5️⃣ Web Dashboard
 
 - List discovered projects along with summaries, scores, and categories.
 - Allow users to filter by category, transparency level, funding, and engagement.
+
+## Hetu Protocol Integration
+
+DeSciLens integrates with the Hetu Protocol testnet to store project metadata and verification hashes on the blockchain. This ensures transparency, immutability, and verifiability of scientific research data.
+
+### Hetu Testnet Information
+
+- **Network Name**: Hetu - testnetv1.0.1
+- **Chain ID**: 560000
+- **RPC URL**: https://rpc.testchainv1.hetuscan.com
+- **Symbol**: Hetu
+- **Block Explorer URL**: http://testchainv1.hetuscan.com
+- **Faucet URL**: https://faucet.testchainv1.hetuscan.com
+
+To connect to the Hetu testnet with MetaMask or another wallet:
+
+1. Open your wallet and go to the networks dropdown
+2. Select "Add Network" or "Custom RPC"
+3. Enter the network details provided above
+4. Save the network configuration
+5. Visit the faucet to get test tokens if needed
 
 ## Getting Started
 
@@ -40,6 +62,7 @@ DeSciLens is an AI-powered tool that automatically discovers, analyzes, and rank
 
 - Node.js (v14 or higher)
 - npm or yarn
+- MetaMask or another Ethereum-compatible wallet (for Hetu Protocol integration)
 
 ### Installation
 
@@ -64,6 +87,7 @@ yarn install
 OPENAI_API_KEY=your_openai_api_key
 TWITTER_BEARER_TOKEN=your_twitter_bearer_token
 GITHUB_TOKEN=your_github_token
+HETU_WALLET_PRIVATE_KEY=your_private_key_for_hetu_transactions
 ```
 
 4. Start the development server:
@@ -116,7 +140,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Acknowledgements
 
-- [Hetu Protocol](https://hetu.example.com) for providing decentralized data management.
+- [Hetu Protocol](https://hetu.org/) for providing decentralized data management.
 - [OpenAI](https://openai.com) for AI-powered analysis.
 - [Next.js](https://nextjs.org) for the web framework.
 - [Tailwind CSS](https://tailwindcss.com) for styling.

@@ -1,5 +1,15 @@
 import { Project, ProjectScores, HetuMetadata } from '@/types';
 
+// Hetu Testnet Configuration
+export const HETU_TESTNET_CONFIG = {
+  networkName: 'Hetu - testnetv1.0.1',
+  chainId: 560000,
+  rpcUrl: 'https://rpc.testchainv1.hetuscan.com',
+  symbol: 'Hetu',
+  blockExplorerUrl: 'http://testchainv1.hetuscan.com',
+  faucetUrl: 'https://faucet.testchainv1.hetuscan.com'
+};
+
 /**
  * Search for DeSci projects on Hetu Protocol
  * Note: This is a mock implementation as Hetu Protocol API is not available yet
@@ -21,7 +31,9 @@ export async function searchHetuProjects(): Promise<Project[]> {
 export async function storeProjectOnHetu(project: Project): Promise<boolean> {
   try {
     // In a real implementation, you would use the Hetu Protocol API to store the project
-    console.log(`Storing project ${project.name} on Hetu Protocol`);
+    // This would involve connecting to the Hetu testnet using the RPC URL
+    // and submitting a transaction to store the project metadata
+    console.log(`Storing project ${project.name} on Hetu Protocol (testnet: ${HETU_TESTNET_CONFIG.networkName})`);
     
     // Mock successful storage
     return true;
@@ -50,6 +62,24 @@ export function createHetuMetadata(project: Project): HetuMetadata {
     timestamp: new Date().toISOString(),
     verificationHash: generateVerificationHash(project)
   };
+}
+
+/**
+ * Connect to Hetu testnet
+ * This would be used in a real implementation to connect to the Hetu blockchain
+ */
+export async function connectToHetuTestnet() {
+  try {
+    // In a real implementation, this would connect to the Hetu testnet
+    // using a library like ethers.js or web3.js
+    console.log(`Connecting to Hetu testnet at ${HETU_TESTNET_CONFIG.rpcUrl}`);
+    
+    // Mock successful connection
+    return true;
+  } catch (error) {
+    console.error('Error connecting to Hetu testnet:', error);
+    return false;
+  }
 }
 
 /**
