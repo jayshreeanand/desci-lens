@@ -125,6 +125,20 @@ DeSciLens follows a modern architecture pattern that combines serverless functio
 
 DeSciLens integrates with the Hetu Protocol testnet to store project metadata and verification hashes on the blockchain. This ensures transparency, immutability, and verifiability of scientific research data.
 
+### Screenshots
+
+![ss3](https://res.cloudinary.com/dlgztvq9v/image/upload/desci-lens/wss3_dbhkma.png)
+
+![ss4](https://res.cloudinary.com/dlgztvq9v/image/upload/desci-lens/wss4_lxgwv4.png)
+
+![ss5](https://res.cloudinary.com/dlgztvq9v/image/upload/desci-lens/wss5_cf6gag.png)
+
+![ss6](https://res.cloudinary.com/dlgztvq9v/image/upload/desci-lens/wss6_cblngr.png)
+
+![ss7](https://res.cloudinary.com/dlgztvq9v/image/upload/desci-lens/wss7_zffkbd.png)
+
+![ss8](https://res.cloudinary.com/dlgztvq9v/image/upload/desci-lens/wss8_zkt76z.png)
+
 ### Hetu Testnet Information
 
 - **Network Name**: Hetu - testnetv1.0.1
