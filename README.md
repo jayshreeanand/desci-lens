@@ -1,10 +1,10 @@
-# DeSciLens 🔍🚀
+# DeSciLens
 
-DeSciLens is an AI-powered tool that automatically discovers, analyzes, and ranks DeSci (Decentralized Science) projects. It leverages Hetu Protocol for decentralized data management and ensures transparency in scientific research.
+DeSciLens is an Autonomous AI Agent for discovering and evaluating DeSci Projects with Hetu Protocol for transparent research Insights.
 
 ## Features
 
-### 1️⃣ Project Discovery
+### Project Discovery
 
 - Scrape DeSci project data from:
   - GitHub (using keywords: "DeSci", "Decentralized Science", "Blockchain Research")
@@ -12,28 +12,114 @@ DeSciLens is an AI-powered tool that automatically discovers, analyzes, and rank
   - ArXiv (fetching scientific papers in relevant domains)
   - Hetu Protocol Repositories
 
-### 2️⃣ AI-Powered Project Analysis
+### AI-Powered Project Analysis
 
 - **Summarization**: Use GPT-4 API to generate short, structured summaries of projects.
 - **Categorization**: Automatically classify projects into fields like Biology, AI, Materials Science, Open Access Research, Blockchain for Science, etc.
 
-### 3️⃣ Scoring & Ranking System
+### Scoring & Ranking System
 
 - **Transparency Score** → Open-source availability, accessibility of research.
 - **Collaboration Score** → Number of contributors, DAO discussions, partnerships.
 - **Funding Score** → Grants, decentralized funding sources, backing organizations.
 - **Engagement Score** → GitHub stars, issues, social media activity.
 
-### 4️⃣ Hetu Protocol Integration
+### Hetu Protocol Integration
 
 - Store project metadata & scores on Hetu Protocol for decentralized validation.
 - Provide verifiable attribution & credibility to DeSci projects.
 - Integration with Hetu testnet for blockchain-based data storage.
 
-### 5️⃣ Web Dashboard
+### Web Dashboard
 
 - List discovered projects along with summaries, scores, and categories.
 - Allow users to filter by category, transparency level, funding, and engagement.
+
+## Tech Stack
+
+DeSciLens is built using modern technologies to ensure scalability, performance, and maintainability:
+
+### Frontend
+
+- **Next.js 14**: React framework with server-side rendering and static site generation
+- **TypeScript**: For type-safe code and better developer experience
+- **Tailwind CSS**: Utility-first CSS framework for responsive design
+- **React Query**: For efficient data fetching and state management
+
+### Backend
+
+- **Node.js**: JavaScript runtime for the server
+- **Next.js API Routes**: Serverless functions for backend operations
+- **Axios**: HTTP client for API requests
+- **Cheerio**: For web scraping and HTML parsing
+
+### AI & Data Processing
+
+- **OpenAI API**: GPT-4 for project analysis and categorization
+- **Langchain**: For building AI workflows and processing
+- **Vector Database**: For semantic search capabilities
+
+### Blockchain Integration
+
+- **Hetu Protocol**: For decentralized data storage and verification
+- **ethers.js**: Ethereum library for blockchain interactions
+- **Web3.js**: Alternative library for blockchain interactions
+
+### DevOps
+
+- **Vercel**: For deployment and hosting
+- **GitHub Actions**: For CI/CD pipelines
+- **ESLint/Prettier**: For code quality and formatting
+
+## Architecture
+
+DeSciLens follows a modern architecture pattern that combines serverless functions, AI processing, and blockchain integration:
+
+```
+┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
+│                 │     │                 │     │                 │
+│  Data Sources   │────▶│  DeSciLens API  │────▶│   Web Frontend  │
+│                 │     │                 │     │                 │
+└─────────────────┘     └────────┬────────┘     └─────────────────┘
+                                 │
+                                 ▼
+                        ┌─────────────────┐
+                        │                 │
+                        │   AI Analysis   │
+                        │                 │
+                        └────────┬────────┘
+                                 │
+                                 ▼
+                        ┌─────────────────┐
+                        │                 │
+                        │ Hetu Blockchain │
+                        │                 │
+                        └─────────────────┘
+```
+
+### Data Flow
+
+1. **Data Collection**:
+
+   - Scrape project data from GitHub, Twitter, ArXiv, and Hetu Protocol
+   - Store raw data temporarily for processing
+
+2. **AI Processing**:
+
+   - Analyze project descriptions and metadata
+   - Generate summaries and categorize projects
+   - Calculate transparency, collaboration, funding, and engagement scores
+
+3. **Blockchain Storage**:
+
+   - Generate verification hashes for projects
+   - Store project metadata and scores on Hetu Protocol
+   - Create verifiable credentials for scientific contributions
+
+4. **User Interface**:
+   - Display projects with their scores and categories
+   - Allow filtering and sorting based on various criteria
+   - Enable users to connect wallets for blockchain interactions
 
 ## Hetu Protocol Integration
 

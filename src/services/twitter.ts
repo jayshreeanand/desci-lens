@@ -45,7 +45,7 @@ function getMockTwitterProjects(): Project[] {
         engagement: 90
       },
       url: 'https://twitter.com/OpenScienceDAO',
-      lastUpdated: '2023-11-15'
+      lastUpdated: '2025-11-15'
     },
     {
       id: 1002,
@@ -59,7 +59,7 @@ function getMockTwitterProjects(): Project[] {
         engagement: 87
       },
       url: 'https://twitter.com/BioGenesis',
-      lastUpdated: '2023-11-14'
+      lastUpdated: '2025-11-14'
     },
     {
       id: 1003,
@@ -73,7 +73,7 @@ function getMockTwitterProjects(): Project[] {
         engagement: 88
       },
       url: 'https://twitter.com/ClimateChain',
-      lastUpdated: '2023-11-12'
+      lastUpdated: '2025-11-12'
     }
   ];
   

@@ -17,7 +17,7 @@ const mockProjects = [
       engagement: 88
     },
     url: 'https://github.com/example/open-science-framework',
-    lastUpdated: '2023-11-15'
+    lastUpdated: '2025-11-15'
   },
   {
     id: 2,
@@ -31,7 +31,7 @@ const mockProjects = [
       engagement: 80
     },
     url: 'https://github.com/example/bio-dao',
-    lastUpdated: '2023-11-10'
+    lastUpdated: '2025-11-10'
   },
   {
     id: 3,
@@ -45,7 +45,7 @@ const mockProjects = [
       engagement: 92
     },
     url: 'https://github.com/example/ai-research-commons',
-    lastUpdated: '2023-11-12'
+    lastUpdated: '2025-11-12'
   },
   {
     id: 4,
@@ -59,7 +59,7 @@ const mockProjects = [
       engagement: 76
     },
     url: 'https://github.com/example/materials-science-blockchain',
-    lastUpdated: '2023-11-08'
+    lastUpdated: '2025-11-08'
   },
   {
     id: 5,
@@ -73,7 +73,7 @@ const mockProjects = [
       engagement: 85
     },
     url: 'https://github.com/example/open-climate-research',
-    lastUpdated: '2023-11-14'
+    lastUpdated: '2025-11-14'
   }
 ]
 
@@ -279,7 +279,7 @@ export default function Projects() {
         <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <p className="text-base text-gray-400">
-              &copy; 2023 DeSciLens. All rights reserved.
+              &copy; 2025 DeSciLens. All rights reserved.
             </p>
           </div>
         </div>

@@ -99,7 +99,7 @@ function getMockHetuProjects(): Project[] {
         engagement: 92
       },
       url: 'https://hetu.example.com/projects/science-commons',
-      lastUpdated: '2023-11-10'
+      lastUpdated: '2025-11-10'
     },
     {
       id: 3002,
@@ -113,7 +113,7 @@ function getMockHetuProjects(): Project[] {
         engagement: 88
       },
       url: 'https://hetu.example.com/projects/biohetu',
-      lastUpdated: '2023-11-05'
+      lastUpdated: '2025-11-05'
     },
     {
       id: 3003,
@@ -127,7 +127,7 @@ function getMockHetuProjects(): Project[] {
         engagement: 94
       },
       url: 'https://hetu.example.com/projects/ai-collective',
-      lastUpdated: '2023-11-08'
+      lastUpdated: '2025-11-08'
     }
   ];
   

@@ -123,7 +123,7 @@ function getMockProjects(): Project[] {
         engagement: 88
       },
       url: 'https://github.com/example/open-science-framework',
-      lastUpdated: '2023-11-15'
+      lastUpdated: '2025-11-15'
     },
     {
       id: 2,
@@ -137,7 +137,7 @@ function getMockProjects(): Project[] {
         engagement: 80
       },
       url: 'https://github.com/example/bio-dao',
-      lastUpdated: '2023-11-10'
+      lastUpdated: '2025-11-10'
     },
     {
       id: 3,
@@ -151,7 +151,7 @@ function getMockProjects(): Project[] {
         engagement: 92
       },
       url: 'https://github.com/example/ai-research-commons',
-      lastUpdated: '2023-11-12'
+      lastUpdated: '2025-11-12'
     }
   ];
 } 

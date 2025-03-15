@@ -71,7 +71,7 @@ function getMockArxivProjects(): Project[] {
         engagement: 90
       },
       url: 'https://arxiv.org/abs/2301.12345',
-      lastUpdated: '2023-01-15'
+      lastUpdated: '2025-01-15'
     },
     {
       id: 2002,
@@ -85,7 +85,7 @@ function getMockArxivProjects(): Project[] {
         engagement: 88
       },
       url: 'https://arxiv.org/abs/2302.54321',
-      lastUpdated: '2023-02-20'
+      lastUpdated: '2025-02-20'
     },
     {
       id: 2003,
@@ -99,7 +99,7 @@ function getMockArxivProjects(): Project[] {
         engagement: 85
       },
       url: 'https://arxiv.org/abs/2303.67890',
-      lastUpdated: '2023-03-10'
+      lastUpdated: '2025-03-10'
     }
   ];
   
