@@ -2,8 +2,8 @@ import Link from 'next/link'
 import dynamic from 'next/dynamic'
 import { Suspense } from 'react'
 
-// Dynamically import the TwitterFeed component with client-side rendering
-const TwitterFeed = dynamic(() => import('@/components/TwitterFeed'), {
+// Dynamically import the LimitedTwitterFeed component with client-side rendering
+const LimitedTwitterFeed = dynamic(() => import('@/components/LimitedTwitterFeed'), {
   ssr: false,
   loading: () => (
     <div className="bg-white shadow-md rounded-lg p-6 h-96 flex items-center justify-center">
@@ -166,8 +166,17 @@ export default function Home() {
           </div>
           
           <Suspense fallback={<div className="h-96 flex items-center justify-center">Loading...</div>}>
-            <TwitterFeed />
+            <LimitedTwitterFeed />
           </Suspense>
+          
+          <div className="mt-8 text-center">
+            <Link href="/twitter" className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-primary-600 hover:bg-primary-700">
+              View Full Twitter Feed
+              <svg xmlns="http://www.w3.org/2000/svg" className="ml-2 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+              </svg>
+            </Link>
+          </div>
         </div>
       </section>
 

@@ -15,6 +15,26 @@ const TwitterFeed = dynamic(() => import('@/components/TwitterFeed'), {
 });
 
 export default function TwitterPage() {
+  // Expanded list of popular hashtags
+  const popularHashtags = [
+    '#DeSci', 
+    '#OpenScience', 
+    '#BlockchainResearch', 
+    '#DecentralizedScience', 
+    '#ScienceDAO',
+    '#OpenAccess',
+    '#OpenData',
+    '#ClimateAction',
+    '#Genomics',
+    '#NFTs',
+    '#IPFS',
+    '#ReproducibleScience',
+    '#CitizenScience',
+    '#OpenPeerReview',
+    '#RareDiseases',
+    '#AI'
+  ];
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* Header */}
@@ -77,7 +97,7 @@ export default function TwitterPage() {
               <div className="bg-white shadow-md rounded-lg p-6">
                 <h2 className="text-xl font-bold text-gray-900 mb-4">Popular Hashtags</h2>
                 <div className="flex flex-wrap gap-2">
-                  {['#DeSci', '#OpenScience', '#BlockchainResearch', '#DecentralizedScience', '#ScienceDAO', '#OpenData', '#OpenAccess'].map((tag) => (
+                  {popularHashtags.map((tag) => (
                     <span key={tag} className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 text-primary-800">
                       {tag}
                     </span>
@@ -107,6 +127,40 @@ export default function TwitterPage() {
                     <a href="https://www.desci.foundation/" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:text-primary-800">
                       DeSci Foundation
                     </a>
+                  </li>
+                  <li>
+                    <a href="https://ipfs.tech/" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:text-primary-800">
+                      IPFS
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.researchhub.com/" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:text-primary-800">
+                      ResearchHub
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-white shadow-md rounded-lg p-6">
+                <h2 className="text-xl font-bold text-gray-900 mb-4">Latest DeSci News</h2>
+                <ul className="space-y-4">
+                  <li>
+                    <h3 className="text-sm font-semibold text-gray-900">New Funding Models for Research</h3>
+                    <p className="text-xs text-gray-600 mt-1">
+                      How DAOs are revolutionizing scientific funding and enabling more innovative research.
+                    </p>
+                  </li>
+                  <li>
+                    <h3 className="text-sm font-semibold text-gray-900">Open Access Publishing on the Blockchain</h3>
+                    <p className="text-xs text-gray-600 mt-1">
+                      Decentralized journals are eliminating gatekeepers and making research freely available.
+                    </p>
+                  </li>
+                  <li>
+                    <h3 className="text-sm font-semibold text-gray-900">Data Ownership in Genomics</h3>
+                    <p className="text-xs text-gray-600 mt-1">
+                      How blockchain is enabling individuals to control and monetize their own genetic data.
+                    </p>
                   </li>
                 </ul>
               </div>

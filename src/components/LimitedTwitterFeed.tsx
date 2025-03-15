@@ -4,32 +4,13 @@ import { useState, useEffect } from 'react';
 import { Tweet } from '@/types';
 import TweetCard from './TweetCard';
 
-export default function TwitterFeed() {
+export default function LimitedTwitterFeed() {
   const [tweets, setTweets] = useState<Tweet[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
-  const [activeHashtag, setActiveHashtag] = useState('All');
-
-  // Expanded list of hashtags for filtering
-  const hashtags = [
-    'All', 
-    '#DeSci', 
-    '#OpenScience', 
-    '#BlockchainResearch', 
-    '#DecentralizedScience', 
-    '#ScienceDAO',
-    '#OpenAccess',
-    '#OpenData',
-    '#ClimateAction',
-    '#Genomics',
-    '#NFTs',
-    '#IPFS',
-    '#ReproducibleScience',
-    '#CitizenScience',
-    '#OpenPeerReview',
-    '#RareDiseases',
-    '#AI'
-  ];
+  
+  // Number of tweets to display
+  const tweetLimit = 5;
 
   useEffect(() => {
     const fetchTweets = async () => {
@@ -42,7 +23,8 @@ export default function TwitterFeed() {
           throw new Error(data.error || 'Failed to fetch tweets');
         }
 
-        setTweets(data.data);
+        // Only take the first 5 tweets
+        setTweets(data.data.slice(0, tweetLimit));
       } catch (err: any) {
         setError(err.message || 'An error occurred while fetching tweets');
       } finally {
@@ -53,61 +35,15 @@ export default function TwitterFeed() {
     fetchTweets();
   }, []);
 
-  // Filter tweets by hashtag
-  const filteredTweets = activeHashtag === 'All'
-    ? tweets
-    : tweets.filter(tweet => tweet.hashtags.includes(activeHashtag));
-
-  // Handle hashtag click from TweetCard
-  const handleHashtagClick = (hashtag: string) => {
-    if (hashtags.includes(hashtag)) {
-      setActiveHashtag(hashtag);
-    }
-  };
-
   return (
     <div className="bg-white shadow-md rounded-lg p-6">
       <div className="flex justify-between items-center mb-6">
-        <h2 className="text-2xl font-bold text-gray-900">DeSci Twitter Feed</h2>
+        <h2 className="text-2xl font-bold text-gray-900">Latest DeSci Tweets</h2>
         <div className="flex items-center">
           <svg className="h-5 w-5 text-primary-500 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
             <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723 10.054 10.054 0 01-3.127 1.184 4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
           </svg>
-          <span className="text-sm font-medium text-gray-600">Live Feed</span>
-        </div>
-      </div>
-
-      {/* Hashtag filters */}
-      <div className="mb-6 overflow-x-auto">
-        <div className="flex space-x-2 pb-2">
-          {hashtags.slice(0, 8).map((hashtag) => (
-            <button
-              key={hashtag}
-              className={`px-3 py-1 rounded-full text-sm font-medium whitespace-nowrap ${
-                activeHashtag === hashtag
-                  ? 'bg-primary-100 text-primary-800'
-                  : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
-              }`}
-              onClick={() => setActiveHashtag(hashtag)}
-            >
-              {hashtag}
-            </button>
-          ))}
-        </div>
-        <div className="flex space-x-2 mt-2">
-          {hashtags.slice(8).map((hashtag) => (
-            <button
-              key={hashtag}
-              className={`px-3 py-1 rounded-full text-sm font-medium whitespace-nowrap ${
-                activeHashtag === hashtag
-                  ? 'bg-primary-100 text-primary-800'
-                  : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
-              }`}
-              onClick={() => setActiveHashtag(hashtag)}
-            >
-              {hashtag}
-            </button>
-          ))}
+          <span className="text-sm font-medium text-gray-600">Trending</span>
         </div>
       </div>
 
@@ -122,17 +58,17 @@ export default function TwitterFeed() {
         <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-md">
           {error}
         </div>
-      ) : filteredTweets.length === 0 ? (
+      ) : tweets.length === 0 ? (
         <div className="text-center py-10">
-          <p className="text-gray-500">No tweets found with the selected hashtag.</p>
+          <p className="text-gray-500">No tweets found.</p>
         </div>
       ) : (
         <div className="space-y-6">
-          {filteredTweets.map((tweet) => (
+          {tweets.map((tweet) => (
             <TweetCard 
               key={tweet.id} 
               tweet={tweet} 
-              onHashtagClick={handleHashtagClick} 
+              onHashtagClick={() => {}} 
             />
           ))}
         </div>
