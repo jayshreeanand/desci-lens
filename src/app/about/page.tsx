@@ -10,7 +10,7 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex justify-between items-center">
             <div className="flex items-center">
-              <Link href="/" className="text-2xl font-bold text-primary-600">DeSciLens 🔍🚀</Link>
+              <Link href="/" className="text-2xl font-bold text-primary-600">DeSciLens</Link>
             </div>
             <nav className="flex space-x-4">
               <Link href="/" className="px-3 py-2 rounded-md text-sm font-medium text-gray-900 hover:bg-gray-100">
@@ -18,6 +18,9 @@ export default function About() {
               </Link>
               <Link href="/projects" className="px-3 py-2 rounded-md text-sm font-medium text-gray-900 hover:bg-gray-100">
                 Projects
+              </Link>
+              <Link href="/ai-features" className="px-3 py-2 rounded-md text-sm font-medium text-gray-900 hover:bg-gray-100">
+                AI Features
               </Link>
               <Link href="/about" className="px-3 py-2 rounded-md text-sm font-medium text-primary-600 bg-gray-100">
                 About
@@ -129,13 +132,9 @@ export default function About() {
                 <p className="text-base text-gray-700 mb-4">
                   Have questions, suggestions, or want to contribute to DeSciLens? We'd love to hear from you!
                 </p>
-                <div className="mt-4">
-                  <a href="mailto:info@descilens.org" className="text-primary-600 hover:text-primary-900">
-                    info@descilens.org
-                  </a>
-                </div>
+               
                 <div className="mt-2">
-                  <a href="https://github.com/descilens/descilens" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:text-primary-900">
+                  <a href="https://github.com/jayshreeanand/desci-lens" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:text-primary-900">
                     GitHub Repository
                   </a>
                 </div>

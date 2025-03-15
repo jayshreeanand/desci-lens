@@ -8,7 +8,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex justify-between items-center">
             <div className="flex items-center">
-              <span className="text-2xl font-bold text-primary-600">DeSciLens 🔍🚀</span>
+              <span className="text-2xl font-bold text-primary-600">DeSciLens</span>
             </div>
             <nav className="flex space-x-4">
               <Link href="/" className="px-3 py-2 rounded-md text-sm font-medium text-gray-900 hover:bg-gray-100">
@@ -16,6 +16,12 @@ export default function Home() {
               </Link>
               <Link href="/projects" className="px-3 py-2 rounded-md text-sm font-medium text-gray-900 hover:bg-gray-100">
                 Projects
+              </Link>
+              <Link href="/ai-features" className="px-3 py-2 rounded-md text-sm font-medium text-gray-900 hover:bg-gray-100">
+                AI Features
+              </Link>
+              <Link href="/ai-test" className="px-3 py-2 rounded-md text-sm font-medium text-gray-900 hover:bg-gray-100">
+                AI Test
               </Link>
               <Link href="/about" className="px-3 py-2 rounded-md text-sm font-medium text-gray-900 hover:bg-gray-100">
                 About
@@ -34,7 +40,7 @@ export default function Home() {
               <span className="block text-primary-200">Decentralized Science Projects</span>
             </h1>
             <p className="mt-3 max-w-md mx-auto text-base text-white sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-              DeSciLens is an AI-powered tool that automatically discovers, analyzes, and ranks DeSci projects, leveraging Hetu Protocol for decentralized data management.
+              DeSciLens is an autonomous AI agent that discovers, analyzes, and ranks DeSci projects, leveraging Hetu Protocol for decentralized data management.
             </p>
             <div className="mt-10 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
               <div className="rounded-md shadow">
@@ -43,8 +49,8 @@ export default function Home() {
                 </Link>
               </div>
               <div className="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">
-                <Link href="/about" className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-primary-700 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10">
-                  Learn More
+                <Link href="/ai-features" className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-primary-700 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10">
+                  Try AI Assistant
                 </Link>
               </div>
             </div>
@@ -124,6 +130,85 @@ export default function Home() {
                   <p className="mt-2 text-base text-gray-500">
                     Store project metadata and scores on Hetu Protocol for decentralized validation and credibility.
                   </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* OpenAI Integration Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="lg:text-center mb-12">
+            <h2 className="text-base text-primary-600 font-semibold tracking-wide uppercase">Powered by OpenAI</h2>
+            <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+              Advanced AI for DeSci Research
+            </p>
+            <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+              DeSciLens leverages OpenAI's GPT-4 to provide intelligent analysis and assistance for decentralized science.
+            </p>
+          </div>
+
+          <div className="bg-white shadow-xl rounded-lg overflow-hidden">
+            <div className="grid grid-cols-1 md:grid-cols-2">
+              <div className="p-8 md:p-12 bg-primary-700">
+                <div className="text-white">
+                  <h3 className="text-2xl font-bold mb-4">DeSci Research Assistant</h3>
+                  <p className="mb-6">
+                    Our AI-powered research assistant can answer questions about decentralized science, blockchain technology in research, and specific DeSci projects.
+                  </p>
+                  <ul className="space-y-2 mb-8">
+                    <li className="flex items-start">
+                      <svg className="h-6 w-6 text-primary-200 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span>Get instant answers to your DeSci questions</span>
+                    </li>
+                    <li className="flex items-start">
+                      <svg className="h-6 w-6 text-primary-200 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span>Learn about blockchain applications in science</span>
+                    </li>
+                    <li className="flex items-start">
+                      <svg className="h-6 w-6 text-primary-200 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span>Discover new research opportunities</span>
+                    </li>
+                  </ul>
+                  <Link href="/ai-features" className="inline-block bg-white text-primary-700 px-6 py-3 rounded-md font-medium hover:bg-gray-100 transition-colors">
+                    Try the Research Assistant
+                  </Link>
+                </div>
+              </div>
+              <div className="p-8 md:p-12">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">AI-Powered Features</h3>
+                <div className="space-y-6">
+                  <div>
+                    <h4 className="text-lg font-medium text-gray-900">Project Analysis</h4>
+                    <p className="text-gray-600">
+                      Our AI analyzes DeSci projects to generate summaries, categorize them, and evaluate their impact.
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-medium text-gray-900">Trend Identification</h4>
+                    <p className="text-gray-600">
+                      Identify emerging trends in decentralized science research and funding.
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-medium text-gray-900">Personalized Recommendations</h4>
+                    <p className="text-gray-600">
+                      Get AI-powered recommendations for DeSci projects based on your interests.
+                    </p>
+                  </div>
+                </div>
+                <div className="mt-8">
+                  <Link href="/ai-test" className="text-primary-600 font-medium hover:text-primary-800">
+                    Test our AI capabilities →
+                  </Link>
                 </div>
               </div>
             </div>
